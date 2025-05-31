@@ -1,5 +1,5 @@
 
-const Drinks = ({children}) => {
+const Drinks = ({children}: any) => {
   return (
     <div className="max-w-xl">
         <div className="mockup-code mb-8">
@@ -8,7 +8,6 @@ const Drinks = ({children}) => {
             </pre>
         </div>
             {children}
-
     </div>
   )
 }

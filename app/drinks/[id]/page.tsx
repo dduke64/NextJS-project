@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
-const fetchDrink = async(id) => {
+const fetchDrink = async(id: any) => {
   const response = await fetch(`${url}${id}`);
 
   if (!response.ok) {
@@ -11,7 +11,7 @@ const fetchDrink = async(id) => {
   return response.json()
 }
 
-const singleDrinkPage = async({params}) => {
+const singleDrinkPage = async({params}: any) => {
     const data = await fetchDrink(params.id)
     console.log(data)
     const title = data?.drinks[0]?.strDrink
