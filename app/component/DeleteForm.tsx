@@ -1,18 +1,13 @@
-'use client'
 import React from 'react'
-import prisma from '@/utils/db';
-const deleteTask = async(id:any) => {
-const task = await prisma.task.findUnique({
-  where: {
-    id: id,
-  },
-});
-}
+import { deleteTask } from '@/utils/actions';
 
-const DeleteForm = (id:any) => {
+
+const DeleteForm = ({id}:any) => {
   return (
-    <button onClick={(e:any)=>deleteTask(id)}>delete task</button>
-  )
+        <form action={deleteTask}>
+                <input type='hidden' name="id" value={id} />
+                 <button type="submit" className='btn btn-error btn-xs'>Delete</button>
+        </form>  )
 }
 
 export default DeleteForm
