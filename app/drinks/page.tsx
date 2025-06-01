@@ -1,5 +1,6 @@
 import DrinksList from "../component/drinksList"; 
  const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
+ import drinkImg from './drink.jpg'
 
 const fetchDrinks = async() => {
     //just to show loading.tsx
