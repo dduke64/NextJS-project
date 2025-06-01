@@ -2,7 +2,6 @@
 import React from 'react'
 import prisma from '@/utils/db';
 const deleteTask = async(id:any) => {
-  'use server'
 const task = await prisma.task.findUnique({
   where: {
     id: id,
