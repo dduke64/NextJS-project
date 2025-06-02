@@ -7,7 +7,7 @@ export default async function Notifications() {
 
   await new Promise((resolve) => setTimeout(resolve, 500));
   const session = (await cookies()).get('session')?.value
-  return <div>I am a Notifications Slot, I am also dynamic
+  return <div>I am a Notifications Slot, I am also dynamic!
     <p>you have... {data[0]} new notifications</p>
   </div>;
 }

@@ -15,12 +15,13 @@ export default function DashboardLayout({
   notifications: React.ReactNode,
 }) {
   return (
-    <div>
-      <div>{children}</div>
-      <div>{users}</div>
-      <div>{revenue}</div>
+    <div className="flex text-center flex-col w-lg">
+        <div className="flex w-full">
+      <div className="w-1/2 m-6 p-6 bg-base-300 border-base-300 text-base-content rounded">{users}</div>
+      <div className="w-1/2 m-6 p-6 bg-base-300 border-base-300 text-base-content rounded">{revenue}</div>
+      </div>
       <Suspense>
-      <div>{notifications}</div>
+      <div className="w-lg mx-6 p-6 bg-primary-content border-base-300 text-base-content rounded">{notifications}</div>
       </Suspense>
     </div>
   );
