@@ -2,8 +2,9 @@ import Link from 'next/link';
 
 const links = [
   { href: '/client', label: 'client-side counter' },
-  { href: '/drinks', label: 'drinks' },
-  { href: '/tasks', label: 'tasks' },
+  { href: '/drinks', label: 'API calls drinks' },
+  { href: '/tasks', label: 'CRUD tasks' },
+  { href: './parallel', label: 'parallel with PPR'}
 ];
 
 
@@ -17,7 +18,7 @@ const Navbar = () => {
         <ul className='menu menu-horizontal md:ml-8'>
             {links.map((link => {
                 return (
-                    <li>
+                    <li key={link.href}>
                         <Link href={link.href} className='capitalize'>{link.label}</Link>
                     </li>
                 )

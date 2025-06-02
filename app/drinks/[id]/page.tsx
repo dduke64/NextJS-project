@@ -15,14 +15,17 @@ const fetchDrink = async(id: any) => {
 
 const singleDrinkPage = async({params}: any) => {
     const data = await fetchDrink(params.id)
+    console.log(data)
     const title = data?.drinks[0]?.strDrink
-        const imgSrc = data?.drinks[0]?.strDrinkThumb
+    const imgSrc = data?.drinks[0]?.strDrinkThumb
+    const instructions = data?.drinks[0]?.strInstructions
 
   return (
     <div>
         <h1 className='text-4xl'>{title}</h1>
         <br></br>
         <Image src={imgSrc} width={300} height={300} className="w-48 h-48 rounded-lg shadow-lg mb-4"priority alt={title}></Image>
+        <p>{instructions}</p>
         <Link href="/drinks" className='btn btn-primary'>Go Back</Link>
     </div>
   )
